@@ -1,3 +1,9 @@
+/*
+A vector of text which doesn't respond to mouse clicks; a vector of text 
+which responds to mouse clicks with "Effect"'s; a 'Speaker', which Game::View
+centers and zooms in on.
+*/
+
 #pragma once
 
 #include "ResponsiveText.h"

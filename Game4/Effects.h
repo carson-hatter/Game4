@@ -1,3 +1,8 @@
+/*
+Representation of the physiological and cognitive changes to be applied to a 
+"HumanCharacter"
+*/
+
 #pragma once
 
 #include "ScientificUnit.h"

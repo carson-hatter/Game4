@@ -2,7 +2,7 @@
 "Foreground" manages the sf::ConvexShape objects that represent what the
 "HumanSprite" objects in "Game" walk on top of; a master class for a vector of
 quadilaterals with two right angles, and two angles that create a randomly
-slanted line that connects to the top right point of the previous sf::
+slanted line that connects to the northeast point of the previous sf::
 ConvexShape object in the given vector.
 */
 

@@ -1,7 +1,8 @@
 /*
-"NullScene" is a child class of "Scene". The scene only lasts a random duration,
-regardless of how far PC travels. NPCs stand a certain distance west of PC's
-greatest eastward displacement.
+A "Scene" that only lasts a random duration,
+regardless of how far PC travels; NPCs stand a certain distance west of PC's
+greatest eastward displacement; redefines all "Scene" virtual functions,
+except render to sf::RenderWindow functions.
 */
 
 #pragma once

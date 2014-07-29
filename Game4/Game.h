@@ -1,7 +1,6 @@
 /*
-"Game" is a master class which manages "Foreground", "Background", 
-"SmoothView", 'PC' and 'NPC' instances of "HumanCharacter", and children of 
-"Scene".
+A master class for "Foreground", "Background", "HumanCharacter", 
+"SmoothView", and a child class of "Scene".
 */
 
 #pragma once

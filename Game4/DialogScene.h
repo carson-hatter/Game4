@@ -1,3 +1,8 @@
+/*
+Branching dialog, a graphic background for the dialog, plus redefinitons of all
+virtual Scene functions, except Scene::renderToWindowNonDefault
+*/
+
 #pragma once
 
 #include "Scene.h"
@@ -17,10 +22,7 @@ public: DialogScene(sf::Font *Font_, int id, sf::Vector2f Default_View_Dimension
 			Background.setFillColor(sf::Color::Black);
 			Background.setPosition(0,0);
 			
-			//another_fucking_font = new sf::Font;
-			//another_fucking_font->loadFromFile("cour.ttf");
 		}
-//private: sf::Font *another_fucking_font;
 public: void renderToWindowDefault(sf::RenderWindow&);
 public: void setView(SmoothView&,
 			sf::Time

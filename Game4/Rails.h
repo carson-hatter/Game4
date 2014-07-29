@@ -1,5 +1,5 @@
  /*
-"Rails" implements a line that traces through the top two points of each
+A line that traces through the two northern points of each
 element of Foreground::Sprites.
 */
 

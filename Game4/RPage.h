@@ -1,3 +1,7 @@
+/*
+A "Page" that represents the user choosing either the next branch of dialog in a "DialogScene" or which "Effects" will be applied to Game::PC and Game::NPCs in a "DDScene".
+*/
+
 #pragma once
 
 #include "Page.h"

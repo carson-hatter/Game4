@@ -1,3 +1,12 @@
+/*
+A single page of dialog, plus a background for the dialog, and a sf::ConvexShape
+that represents a cluster of "Effects" to be applied to PC and NPC's; all 
+virtual "Scene" functions are redefined; this "Scene" child has two states:
+before and after the PC::getSpritePosition().x is > Scene::pcs_greatest_eastward_displacement
+ - "DDScene" is extremely similar to a "NullScene" first, then a single "Page"
+ "DialogScene", and then 'Item_To_DD' is deleted and this instance is deleted in "Game"
+*/
+
 #pragma once
 
 #include "Scene.h"

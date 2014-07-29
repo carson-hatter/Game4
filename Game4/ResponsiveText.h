@@ -1,3 +1,9 @@
+/*
+Text that can provide "Effect"'s for PC and allied NPC's, plus an arbitrary 
+std::string to be passed into a "RPage"/"URPage" constructor to determine what
+Page::RText/Page::URText is declared.
+*/
+
 #pragma once
 
 #include "UnresponsiveText.h"

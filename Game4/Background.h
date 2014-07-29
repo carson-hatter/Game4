@@ -1,7 +1,8 @@
 /*
-"Background" manages the graphics drawn before anything else inside "Game",
-the sf::ConvexShape objects that move at a fraction of the "Foreground"
-sf::ConvexShape objects
+The graphics drawn before anything else inside "Game" and move at a slower pace
+than the "Foreground" graphics; once the PC is getting too close to the most eastward coordinate
+of the vector of graphics, a new sf::ConvexShape; once the PC is getting too far
+from the most westward graphic, it is removed from the vector.
 */
 #pragma once
 

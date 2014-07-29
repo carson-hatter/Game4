@@ -1,7 +1,6 @@
 /*
-"HumanCharacter" is a child class of "HumanPhysiology", "HumanSprite", and
-"HumanCognition"; "HumanCharacter" is a master class of the three parent
-classes.
+A child class of "HumanPhysiology", "HumanSprite", and
+"HumanCognition".
 */
 #pragma once
 
