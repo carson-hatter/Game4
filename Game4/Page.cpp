@@ -7,6 +7,8 @@ Page::Page()
 
 void Page::renderToWindow(sf::RenderWindow &Window)
 {
+	Window.draw(Background);
+
 	for(unsigned int i = 0; i < URText.size(); i++)
 	{
 		URText[i].renderToWindow(Window);
@@ -15,6 +17,14 @@ void Page::renderToWindow(sf::RenderWindow &Window)
 	{
 		RText[i].renderToWindow(Window);
 	}
+}
+
+void Page::resizeBackground(sf::Vector2f View_Dimensions)
+{
+	Background.setPosition(0,0);
+	Background.setOrigin(0,0);
+	Background.setSize(sf::Vector2f(View_Dimensions.x, View_Dimensions.y / 3));
+	Background.setFillColor(sf::Color::Black);
 }
 
 //bool Page::responsiveTextClicked(sf::Vector2f Mouse)

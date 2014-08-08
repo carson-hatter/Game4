@@ -11,17 +11,10 @@ virtual Scene functions, except Scene::renderToWindowNonDefault
 
 class DialogScene : public Scene
 {
-public: DialogScene(sf::Font *Font_, int id, sf::Vector2f Default_View_Dimensions, HumanCharacter &PC, std::vector<HumanCharacter> &Allies) : Scene(Default_View_Dimensions)
+public: DialogScene(sf::Font *Font_, sf::Vector2f Default_View_Dim, HumanCharacter &PC, std::vector<HumanCharacter> &Allies) : Scene(Default_View_Dim)
 		{
 			Font = Font_;
-			if(id == 0)
-			{
-				Current_Page = new RPage("r_0", Font, PC, Allies);
-			} 
-			Background.setSize(sf::Vector2f(Default_View_Dimensions.x, Default_View_Dimensions.y / 2.5));
-			Background.setFillColor(sf::Color::Black);
-			Background.setPosition(0,0);
-			
+			Current_Page = new RPage(generatePageId(), Font, PC, Allies, Default_View_Dimensions);
 		}
 public: void renderToWindowDefault(sf::RenderWindow&);
 public: void setView(SmoothView&,
@@ -41,5 +34,6 @@ public: bool sceneOver();
 
 private: sf::Font *Font;
 private: Page* Current_Page;
-private: sf::RectangleShape Background;
+private: std::string generatePageId();
+//private: sf::RectangleShape Background;
 };

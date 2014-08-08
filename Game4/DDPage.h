@@ -13,7 +13,7 @@ worthwhile, and I don't want a tiny parent class squeezed between "RPage"/
 
 class DDPage : public Page
 {
-public: DDPage(std::string id, sf::Font *Font) : Page()
+public: DDPage(std::string id, sf::Font *Font, sf::Vector2f View_Dimensions) : Page()
 		{
 			if(id == "dd_0")
 			{
@@ -21,6 +21,8 @@ public: DDPage(std::string id, sf::Font *Font) : Page()
 			}
 
 			initializationCheck(id, Font);
+
+			resizeBackground(View_Dimensions);
 		}
 public: bool clicked(sf::Vector2f);//mouse
 };

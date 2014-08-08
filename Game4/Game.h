@@ -40,7 +40,9 @@ public: void setPCsGreatestEastwardDisplacement();
 
 public: void sceneChange();
 
-private: unsigned int getSceneId();
+private: unsigned int generateDialogSceneId();
+
+private: std::vector<unsigned int> Dialog_Scenes_Generated;
 
 private: sf::Font *Font;
 };

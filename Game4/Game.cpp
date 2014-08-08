@@ -52,6 +52,7 @@ void Game::sceneChange()
 				if(scene_type_index == 0)
 				{
 					Current_Scene = new DDScene(Foreground_, Font, View.getDefaultSize(), 4);
+					//Current_Scene = new DialogScene(Font, View.getDefaultSize(), PC, Allies);
 				}
 			}
 			scene_count++;
@@ -59,9 +60,19 @@ void Game::sceneChange()
 	}
 }
 
-unsigned int Game::getSceneId()
+unsigned int Game::generateDialogSceneId()
 {
-	return 0;
+	/*
+	TODO: look at PC and Allies' cognitive and physiological effects and determine
+	which dialog scene should play; don't forget to check if the scene has already
+	been chosen
+	*/
+
+	unsigned int to_return;
+
+
+
+	return to_return;
 }
 
 void Game::updateScenery()

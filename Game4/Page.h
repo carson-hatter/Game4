@@ -14,6 +14,7 @@ class Page
 protected: std::vector<UnresponsiveText> URText;
 protected: std::vector<ResponsiveText> RText;
 protected: HumanCharacter *Speaker;
+private: sf::RectangleShape Background;
 public: sf::Vector2f getSpeakerPosition(){return Speaker->getSpritePosition();}
 public: Page();
 protected: float vertical_buffer;
@@ -25,5 +26,7 @@ protected: Effects PC_Effects;
 protected: std::vector<Effects> Allies_Effects;
 protected: void initializationCheck(std::string,//id
 			   sf::Font*//font
+			   );
+protected: void resizeBackground(sf::Vector2f // view dimensions
 			   );
 };

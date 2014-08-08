@@ -4,7 +4,7 @@
 
 class URPage : public Page
 {
-public: URPage(std::string id, sf::Font *Font, HumanCharacter &PC, std::vector<HumanCharacter> &Allies) : Page()
+public: URPage(std::string id, sf::Font *Font, HumanCharacter &PC, std::vector<HumanCharacter> &Allies, sf::Vector2f View_Dimensions) : Page()
 		{
 			Allies_Effects.resize(3);
 
@@ -30,6 +30,8 @@ public: URPage(std::string id, sf::Font *Font, HumanCharacter &PC, std::vector<H
 			}
 
 			initializationCheck(id, Font);
+
+			resizeBackground(View_Dimensions);
 		}
 public: std::string *getNextPageId(sf::Vector2f);//mouse
 //public: Effects getPCEffects(sf::Vector2f);//mouse

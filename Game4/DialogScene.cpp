@@ -45,11 +45,11 @@ void DialogScene::eventHandling(sf::RenderWindow &Window, HumanCharacter &PC, sf
 					
 					if(Next_Page_Id->at(0) == 'r')
 					{
-						Current_Page = new RPage(*Next_Page_Id, Font, PC, Allies);
+						Current_Page = new RPage(*Next_Page_Id, Font, PC, Allies, Default_View_Dimensions);
 					}
 					if(Next_Page_Id->at(0) == 'u')
 					{
-						Current_Page = new URPage(*Next_Page_Id, Font, PC, Allies);
+						Current_Page = new URPage(*Next_Page_Id, Font, PC, Allies, Default_View_Dimensions);
 					}
 				}
 			}
@@ -61,7 +61,7 @@ void DialogScene::renderToWindowDefault(sf::RenderWindow &Window)
 {
 	if(Current_Page)
 	{
-		Window.draw(Background);
+		//Window.draw(Background);
 		Current_Page->renderToWindow(Window);
 	}
 }
@@ -103,4 +103,14 @@ void DialogScene::setView(SmoothView &View, sf::Time Time_Per_Frame)
 		
 		View.move(Current_Page->getSpeakerPosition(), Time_Per_Frame);
 	}
+}
+
+std::string DialogScene::generatePageId()
+{
+	std::string to_return;
+	std::string default_to_return = "r_0";
+	to_return = default_to_return;
+
+
+	return to_return;
 }

@@ -284,6 +284,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\DialogSceneTypeEnum.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Effects.h"
 				>
 			</File>

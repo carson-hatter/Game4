@@ -12,6 +12,7 @@ void DDScene::renderToWindowDefault(sf::RenderWindow &Window)
 {
 	if(DD_Page)
 	{
+		//Window.draw(Dialog_Background);
 		DD_Page->renderToWindow(Window);
 	}
 }
@@ -61,7 +62,12 @@ void DDScene::eventHandling(sf::RenderWindow &Window, HumanCharacter &PC, sf::Ti
 			{
 				delete DD_Page;
 			}
-			DD_Page = new RPage(generateDDPageId() ,Font);
+			PC.setSpritePosition(PC.getSpritePosition());
+			for(unsigned int i = 0; i < Allies.size(); i++)
+			{
+				Allies[i].setSpritePosition(Allies[i].getSpritePosition());
+			}
+			DD_Page = new RPage(generatePageId(), Font, PC, Allies, Default_View_Dimensions);
 		}
 	}
 
@@ -75,35 +81,39 @@ void DDScene::eventHandling(sf::RenderWindow &Window, HumanCharacter &PC, sf::Ti
 		
 		//if(itemDiscovered())
 		//{
-			if(Event.type == sf::Event::MouseButtonReleased)
+		if(Event.type == sf::Event::MouseButtonReleased)
+		{
+			if(DD_Page)
 			{
-				if(DD_Page)
+				sf::Vector2f Mouse_Pos(sf::Mouse::getPosition(Window));
+
+				if(DD_Page->clicked(Mouse_Pos))
 				{
-					sf::Vector2f Mouse_Pos(sf::Mouse::getPosition(Window));
-
-					if(DD_Page->clicked(Mouse_Pos))
+					for(unsigned int i = 0; i < Allies.size(); i++)
 					{
-						for(unsigned int i = 0; i < Allies.size(); i++)
-						{
-							Allies[i].applyEffects(DD_Page->getAllyEffects(Mouse_Pos).at(i));
-						}
-
-						PC.applyEffects(DD_Page->getPCEffects(Mouse_Pos));
-
-						delete DD_Page;
-						DD_Page = NULL;
-						delete Item_To_DD;
-						Item_To_DD = NULL;
+						Allies[i].applyEffects(DD_Page->getAllyEffects(Mouse_Pos).at(i));
 					}
+
+					PC.applyEffects(DD_Page->getPCEffects(Mouse_Pos));
+
+					delete DD_Page;
+					DD_Page = NULL;
+					delete Item_To_DD;
+					Item_To_DD = NULL;
 				}
 			}
+		}
 		//}	
 	}
 }
 
-std::string DDScene::generateDDPageId()
+std::string DDScene::generatePageId()
 {
-	return "dd_0";
+	std::string to_return;
+	std::string default_to_return = "dd_0";
+	to_return = default_to_return;
+
+	return to_return;
 }
 
 void DDScene::processAI(sf::Time Time_Per_Frame, std::vector<HumanCharacter> &Allies, Foreground Foreground_)

@@ -51,11 +51,12 @@ public: void processAI(sf::Time,
 public: bool sceneOver();
 
 private: sf::ConvexShape *Item_To_DD;
+private: sf::RectangleShape Dialog_Background;
 private: bool itemDiscovered();
 private: bool itemDistributed();
 private: float null_to_dd_view_ratio;
 private: RPage *DD_Page;
 private: sf::Font *Font;
-private: std::string generateDDPageId();
+private: std::string generatePageId();
 		 //private: float posse_width = gap between chars * number of chars / 2
 };
